@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+
+<style>
+#Form{
+   width: 400px;
+   background-color: rgba(#1D042C);
+   color: #92F2FB; 
+   margin-top: 150px;
+}
+body{
+    background-image: url(TControle.jpg);
+    background-size: 50%;
+}
+
+</style>
+
+</head>
+    
+
+<body>
+    <div class="container text-center" id="Form">
+    <label for="item1">Nome:</label>
+    <input class="form-control" type="text" id="item1" name="item1" placeholder="Digite seu nome aqui."><br>
+    <br>
+    <label for="Anotaçao"> Você costuma jogar com qual frequência?</label><br>
+    <textarea class="form-control" id="Anotaçao">
+        
+    </textarea><br>
+
+    <a href="Site2°.html"><button onclick="Clicar ()" class="btn btn-primary" id= "Proximo" nome = "Proximo" >Proximo</button></a><br>
+    <pre id="Informaçao"></pre>
+    </div>
+
+    <script>
+
+    function Clicar () {
+
+    var Nome = document.getElementById("item1").value;
+    var Texto = document.getElementById ("Anotaçao").value;
+    localStorage.setItem('Nome', Nome);
+    localStorage.setItem ('Anotaçao', Texto);
+
+
+
+    }
+    document.getElementById("item1").value = localStorage.Nome;
+    document.getElementById("Anotaçao").value = localStorage.Anotaçao;
+    document.getElementById("Informaçao").innerHTML = localStorage.Nome + "\n" + localStorage.Anotaçao;
+
+    </script>
+  </body>
+</html>
